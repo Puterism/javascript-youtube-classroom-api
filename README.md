@@ -10,7 +10,7 @@
 ### 로컬 환경에서
 
 1. `git clone`을 합니다.
-2. `.env` 파일을 root에 생성하고 `YOUTUBE_APT_KEY=<API 키를 여기에 입력합니다>`를 작성하고 저장합니다.
+2. `.env` 파일을 root에 생성하고 `YOUTUBE_API_KEY=<API 키를 여기에 입력합니다>`를 작성하고 저장합니다.
 3. `yarn`을 하고 `yarn start`를 하면 서버가 열립니다.
 4. `localhost:8080`으로 요청합니다.
 
