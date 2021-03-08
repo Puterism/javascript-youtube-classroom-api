@@ -1,0 +1,17 @@
+{
+  "name": "javascript-youtube-classroom-api",
+  "description": "우아한테크코스 나만의 유튜브 강의실 미션 수행용",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "author": "Shim MunSeong <Puterism.K@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon --watch src/ src/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "restify": "^8.5.1"
+  }
+}
