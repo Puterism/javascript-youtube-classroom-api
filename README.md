@@ -31,6 +31,11 @@
 - `pageToken`
   - API 요청 후 받은 `prevPageToken`이나 `nextPageToken` 값을 넣어서 호출하는 식으로 Pagination 가능
 
+#### Example
+```
+/search/무야호?pageToken=OIRWqA
+```
+
 
 ### `/videos`
 
@@ -45,7 +50,7 @@
 
 ### 결과 반환 형태
 
-```json
+```
 {
   "success": Boolean,
   "data": Object (유튜브 API로 호출한 response.data를 그대로 반환)
