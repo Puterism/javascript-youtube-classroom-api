@@ -84,8 +84,8 @@ const cors = corsMiddleware({
 });
 
 const server = restify.createServer();
-server.get('/search/:keyword', searchVideo);
-server.get('/search/dummy/:keyword', searchDummy);
+server.get('/search', searchVideo);
+server.get('/search/dummy', searchDummy);
 server.get('/videos', getVideosById);
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
