@@ -16,6 +16,7 @@ async function searchVideo(req, res) {
         pageToken,
       },
     });
+
     res.json({
       success: true,
       data: response.data,
@@ -74,7 +75,10 @@ async function getVideosById(req, res) {
 }
 
 const cors = corsMiddleware({
+  allowHeaders: ['access-control-allow-origin'],
   origins: [
+    'http://127.0.0.1:5500',
+    'http://localhost:5500',
     'http://vultr.puterism.com:8080',
     'https://puterism.github.io',
     'https://iborymagic.github.io',
