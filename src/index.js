@@ -3,13 +3,12 @@ import api from './api.js';
 import db from './db.js';
 
 async function searchVideo(req, res) {
-  const { keyword } = req.params;
-  const { pageToken } = req.query;
+  const { q, pageToken } = req.query;
 
   try {
     const response = await api.get(`search`, {
       params: {
-        q: keyword,
+        q,
         part: 'snippet',
         type: 'video',
         maxResults: 10,
@@ -29,10 +28,9 @@ async function searchVideo(req, res) {
 }
 
 async function searchDummy(req, res) {
-  const { keyword } = req.params;
-  console.log(keyword);
+  const { q } = req.query;
 
-  if (keyword === '무야호') {
+  if (q === '무야호') {
     res.json({
       success: true,
       data: db,
@@ -52,15 +50,14 @@ async function searchDummy(req, res) {
 }
 
 async function getVideosById(req, res) {
-  const { ids } = JSON.parse(req.body);
-  const idsString = ids.join(',');
+  const { id } = req.query;
 
   try {
     const response = await api.get(`videos`, {
       params: {
         part: 'snippet',
         type: 'video',
-        id: idsString,
+        id,
       },
     });
     res.json({
