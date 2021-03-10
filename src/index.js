@@ -1,5 +1,6 @@
 import restify from 'restify';
 import api from './api.js';
+import db from './db.js';
 
 async function searchVideo(req, res) {
   const { keyword } = req.params;
@@ -25,6 +26,29 @@ async function searchVideo(req, res) {
       error,
     });
   }
+}
+
+async function searchDummy(req, res) {
+  const { keyword } = req.params;
+  console.log(keyword);
+
+  if (keyword === '무야호') {
+    res.json({
+      success: true,
+      data: db,
+    });
+
+    return;
+  }
+
+  res.json({
+    success: true,
+    data: {
+      pageInfo: {
+        totalResults: 0,
+      },
+    },
+  });
 }
 
 async function getVideosById(req, res) {
@@ -53,6 +77,7 @@ async function getVideosById(req, res) {
 
 const server = restify.createServer();
 server.get('/search/:keyword', searchVideo);
+server.get('/search/dummy/:keyword', searchDummy);
 server.get('/videos', getVideosById);
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
