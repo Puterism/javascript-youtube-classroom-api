@@ -19,7 +19,7 @@ async function searchVideo(req, res) {
 
     res.json({
       success: true,
-      data: response.data,
+      ...response.data,
     });
   } catch (error) {
     res.json({
@@ -35,7 +35,7 @@ async function searchDummy(req, res) {
   if (q === '무야호') {
     res.json({
       success: true,
-      data: db,
+      ...db,
     });
 
     return;
@@ -43,10 +43,8 @@ async function searchDummy(req, res) {
 
   res.json({
     success: true,
-    data: {
-      pageInfo: {
-        totalResults: 0,
-      },
+    pageInfo: {
+      totalResults: 0,
     },
   });
 }
@@ -64,7 +62,7 @@ async function getVideosById(req, res) {
     });
     res.json({
       success: true,
-      data: response.data,
+      ...response.data,
     });
   } catch (error) {
     res.json({
