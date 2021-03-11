@@ -66,6 +66,6 @@
 ```
 {
   "success": Boolean,
-  "data": Object (유튜브 API로 호출한 response.data를 그대로 반환)
+  ...Object (유튜브 API로 호출한 response.data를 그대로 반환)
 }
 ```
